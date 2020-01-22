@@ -15,7 +15,7 @@ mongoose.connect(process.env.MONGO_URL,{
     useFindAndModify: false 
 })
 
-app.listen(process.env.PORT || 3000)
+app.listen(process.env.PORT || 8000)
 
 //TIPOS DE PARÂMETROS
 
