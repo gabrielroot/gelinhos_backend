@@ -9,6 +9,8 @@ routes.post('/novo', geladinhoController.store)
 routes.put('/editar/:id', geladinhoController.update)
 
 routes.get('/pedidos', pedidoController.show)
+routes.delete('/pedidoDelete/:id', pedidoController.destroy)
+routes.put('/pedidoUpdate/:id', pedidoController.update)
 routes.post('/pedir', pedidoController.store)
 
 

@@ -26,5 +26,20 @@ module.exports = {
     async show(req,res){
         const pdd = await pedido.find()
         return res.json(pdd)
+    },
+    async destroy(req, res){
+        await pedido.findByIdAndDelete(req.params.id)
+        res.json({id: req.params.id})
+    },
+    async update(req, res){
+        const {latitude, longitude} = req.body.local
+
+        const local = {
+            type: 'Point',
+            coordinates: [longitude, latitude],
+        }
+
+        const ice = await pedido.findByIdAndUpdate(req.params.id, req.body, {new: true}) //'new: true' envia o novo valor para a variável product (depois de atualizado)
+        return res.json(ice)
     }
 }
